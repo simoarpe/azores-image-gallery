@@ -6,6 +6,8 @@ This project is a small Frankestein that was put together from other similar pro
 • [urban-theme](https://github.com/midzer/urban-theme)  
 
 The main goal is to show a given set of albums with ease leveraging the flexibility of Jekyll to provide a pleasant theme.
+![Gallery Index](https://github.com/simoarpe/azores-image-gallery/blob/master/gallery_index.png)
+![Gallery Page](https://github.com/simoarpe/azores-image-gallery/blob/master/gallery_page.gif)
 
 The following configuration options are applied by default if not specified:
 ```config.yml
