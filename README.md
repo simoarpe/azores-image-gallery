@@ -60,9 +60,9 @@ To offer the site in your local network run `jekyll serve --host 0.0.0.0` and al
 
 ## Other useful info
 
-Azores Image Gallery uses under the hood [`Minimagick`](https://github.com/minimagick/minimagick) to generate the thumbnail. `Minimagick` is a clone of [`Rmagic`](https://github.com/rmagick/rmagick) but with a smaller memory footprint.
+* Azores Image Gallery uses under the hood [`Minimagick`](https://github.com/minimagick/minimagick) to generate all the thumbnails. `Minimagick` is a clone of [`Rmagic`](https://github.com/rmagick/rmagick) but with a smaller memory footprint.
 
-The `symlink` option, that is enabled by default, will create symbolic links instead of copying every pictures in order to save disk space.
+* The `symlink` option, that is enabled by default, will create symbolic links instead of copying every pictures in order to save disk space.
 
-`auto_orient` options is disabled by default. If set to true Azores Image Gallery will use an [Exif Reader](https://github.com/remvee/exifr) to determine the actual orientation of a picture.
+* `auto_orient` options is disabled by default. If set to true Azores Image Gallery will use an [Exif Reader](https://github.com/remvee/exifr) to determine the actual orientation of a picture.
 
