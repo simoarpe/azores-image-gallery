@@ -1,11 +1,9 @@
 # Azores Image Gallery
 
 This project is a small Frankestein that was put together from other similar projects:  
-• [Jekyll Gallery Generator](https://github.com/ggreer/jekyll-gallery-generator)
-
-• [Jekyll MiniMagick new](https://github.com/MattKevan/Jekyll-MiniMagick-new)
-
-• [urban-theme](https://github.com/midzer/urban-theme)
+• [Jekyll Gallery Generator](https://github.com/ggreer/jekyll-gallery-generator)  
+• [Jekyll MiniMagick new](https://github.com/MattKevan/Jekyll-MiniMagick-new)  
+• [urban-theme](https://github.com/midzer/urban-theme)  
 
 The main goal is to show a given set of albums with ease leveraging the flexibility of Jekyll to provide a pleasant theme.
 
@@ -24,14 +22,17 @@ gallery:
     y: 300                  # max height of thumbnails (in pixels)
 ```
 
-Check `_config.yml` for the full list of options/
+Check `_config.yml` for the full list of options.
 
-* Simply place all your albums in the albums folder that by default is photos.
-* Start Jekyll by typing `jekyll serve`
+## Installation and Configuration
+
+* Clone the project and simply place all your albums in the gallery folder that by default is `photos`.
+* The first time only run `bundle install` to download all the dependencies.
+* Start Jekyll by typing `jekyll serve`.
 The firts time the build starts (either with `jekyll build` or `jekyll serve`) it will take some time to generate all the thumbnails.
 
 DONE!
-Navigate to `localhost:4000` to browse all your images, mobile integration with swipe is supported too!
+When Jekyll is ready navigate to `localhost:4000` to browse all your images, and mobile integration with swiping is supported too!
 
 To further improve the experience you can modify, or remove some configuration options like
 ```config.yml
@@ -53,7 +54,7 @@ There are also some placeholders in the following places:
 
 These can be changed with something better to improve the generated site.
 
-To offer the site in your local network run `jekyll serve --host 0.0.0.0` and all the devices connected to the same network can navigate the albums by typing `<local_ip>:4000`. The `<local_ip>` is the local IP of the machine serving the Jekyll site, and on OSx can be easily discovered by accessing the Network Preferences.
+To offer the site in your local network run `jekyll serve --host 0.0.0.0` and all the devices connected to the same network can navigate the albums by typing `<local_ip>:4000`. The `<local_ip>` is the local IP of the machine serving the Jekyll site. On OSx the IP can be easily discovered by accessing the Network Preferences.
 
 
 
