@@ -32,7 +32,7 @@ Check `_config.yml` for the full list of options.
 The firts time the build starts (either with `jekyll build` or `jekyll serve`) it will take some time to generate all the thumbnails.
 
 DONE!
-When Jekyll is ready navigate to `localhost:4000` to browse all your images, and mobile integration with swipe is supported too!
+When Jekyll is ready navigate to `localhost:4000` to browse all your images, and mobile integration with swiping is supported too!
 
 To further improve the experience you can modify, or remove some configuration options like
 ```config.yml
