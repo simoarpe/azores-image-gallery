@@ -2,9 +2,7 @@
 
 This project is a small Frankestein that was put together from other similar projects:  
 • [Jekyll Gallery Generator](https://github.com/ggreer/jekyll-gallery-generator)
-
 • [Jekyll MiniMagick new](https://github.com/MattKevan/Jekyll-MiniMagick-new)
-
 • [urban-theme](https://github.com/midzer/urban-theme)
 
 The main goal is to show a given set of albums with ease leveraging the flexibility of Jekyll to provide a pleasant theme.
