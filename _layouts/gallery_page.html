@@ -1,0 +1,24 @@
+---
+layout: page
+---
+<script src="/js/jquery.min.js"></script>
+<script src="/js/lightbox.js"></script>
+<style>
+    .image-gallery {overflow: auto; margin-left: -1%!important;}
+    .image-gallery a {color: silver!important; float: left; display: block; margin: 0 0 1% 1%; width: 19%; text-align: center; text-decoration: none!important;}
+    .image-gallery a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+    .image-gallery a img {width: 100%; display: block;}
+    .image-gallery-index a:hover,
+    .image-gallery a:hover {color: #777!important;}
+    .image-gallery a img{filter: grayscale(100%) brightness(116%) contrast(83%) opacity(70%);}
+    .image-gallery-index a:hover img,
+    .image-gallery a:hover img{filter: grayscale(0%) brightness(100%) contrast(100%) opacity(100%);}
+</style>
+<p class="image-gallery">
+{% for image in page.images %}
+        <a href="{{ image.name }}" title="{{ image.name }}">
+        <img src="thumbs/{{ image.name }}" alt="{{ image.name }}" title="{{ image.name }}" />
+        <span>{{ filename }}</span>
+        </a>
+{% endfor %}
+</p>

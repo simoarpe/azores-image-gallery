@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <!-- Holder.js for client side placeholder images -->
+  <script src="{{ '/js/holder.js' | prepend: site.baseurl }}"></script>
+  {% include head.html %}
+
+  <body>
+
+    <main class="wrapper">
+      
+      {% include header.html %}
+
+      <div class="container">
+        {{ content }}
+
+        {% include footer.html %}
+      </div>
+    
+    </main>
+    {% include scripts.html %}
+  </body>
+
+</html>
