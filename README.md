@@ -58,5 +58,11 @@ These can be changed with something better to improve the generated site.
 
 To offer the site in your local network run `jekyll serve --host 0.0.0.0` and all the devices connected to the same network can navigate the albums by typing `<local_ip>:4000`. The `<local_ip>` is the local IP of the machine serving the Jekyll site. On OSx the IP can be easily discovered by accessing the Network Preferences.
 
+## Other useful info
 
+Azores Image Gallery uses under the hood [`Minimagick`](https://github.com/minimagick/minimagick) to generate the thumbnail. `Minimagick` is a clone of [`Rmagic`](https://github.com/rmagick/rmagick) but with a smaller memory footprint.
+
+The `symlink` option, that is enabled by default, will create symbolic links instead of copying every pictures in order to save disk space.
+
+`auto_orient` options is disabled by default. If set to true Azores Image Gallery will use an [Exif Reader](https://github.com/remvee/exifr) to determine the actual orientation of a picture.
 
