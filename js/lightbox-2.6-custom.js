@@ -58,8 +58,33 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
       });
     };
 
-    Lightbox.prototype.resetOrientation = function() {
+    Lightbox.prototype.rotateImage = function() {
+      var _this = this;
+      $cont = _this.$lightbox.find('.lb-outerContainer');
+      $image = _this.$lightbox.find('.lb-image');
       
+        if ($($cont).attr('angle') == null) {
+            $($cont).attr('angle', 0);
+        }
+        var value = Number($($cont).attr('angle'));
+        value += 90;
+        value %= 360;
+
+        $($cont).attr('angle', value); 
+        
+        $image.removeClass('rotate90');
+        $image.removeClass('rotate180');
+        $image.removeClass('rotate270');
+
+        if (value == 90) {
+          $image.addClass('rotate90')
+        } else if (value == 180) {
+          $image.addClass('rotate180')
+        } else if (value == 270) {
+          $image.addClass('rotate270')
+        }
+
+        _this.changeImage(_this.currentImageIndex, value);
     }
 
     Lightbox.prototype.build = function() {
@@ -108,32 +133,7 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
         return false;
       });
       this.$lightbox.find('.lb-rotate').on('click', function() {
-          $cont = _this.$lightbox.find('.lb-outerContainer');
-          $image = _this.$lightbox.find('.lb-image');
-          
-            if ($($cont).attr('angle') == null) {
-                $($cont).attr('angle', 0);
-            }
-            var value = Number($($cont).attr('angle'));
-            value += 90;
-            value %= 360;
-
-            $($cont).attr('angle', value); 
-            
-            $image.removeClass('rotate90');
-            $image.removeClass('rotate180');
-            $image.removeClass('rotate270');
-
-            if (value == 90) {
-              $image.addClass('rotate90')
-            } else if (value == 180) {
-              $image.addClass('rotate180')
-            } else if (value == 270) {
-              $image.addClass('rotate270')
-            }
-
-            _this.changeImage(_this.currentImageIndex, value);
-          
+          _this.rotateImage();
           return false;
       });      
       
@@ -272,8 +272,9 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
         }
         if (rotation == 90 || rotation == 270) {
           return _this.sizeContainer($image.height(), $image.width());
+        } else {
+          return _this.sizeContainer($image.width(), $image.height());
         }
-        return _this.sizeContainer($image.width(), $image.height());
       };
       preloader.src = this.album[imageNumber].link;
       this.currentImageIndex = imageNumber;
@@ -380,6 +381,8 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
         if (this.currentImageIndex !== this.album.length - 1) {
           this.changeImage(this.currentImageIndex + 1, 0);
         }
+      } else if (key === 'r') {
+          this.rotateImage();
       }
     };
 

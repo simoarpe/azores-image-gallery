@@ -12,7 +12,7 @@ body:after {
     left: 0;
     z-index: 9999;
     background-color: black;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    filter: grayscale(100%) brightness(116%) contrast(83%) opacity(70%);
     opacity: 0.8;
     display: none;
   }
@@ -192,13 +192,13 @@ body:after {
     background: url(./img/close.png) top right no-repeat;
     text-align: right;
     outline: none;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    filter: grayscale(100%) brightness(116%) contrast(83%) opacity(70%);
     opacity: 0.7;
   }
   /* line 130, ../sass/lightbox.sass */
   .lb-data .lb-close:hover {
     cursor: pointer;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: grayscale(0%) brightness(100%) contrast(100%) opacity(100%);
     opacity: 1;
   }
   /* Fix for bootstrap */
@@ -212,13 +212,13 @@ body:after {
     background: url(./img/rotate.png) top right no-repeat;
     text-align: right;
     outline: none;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    filter: grayscale(100%) brightness(116%) contrast(83%) opacity(70%);
     opacity: 0.7;
   }
   /* line 130, ../sass/lightbox.sass */
   .lb-data .lb-rotate:hover {
     cursor: pointer;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: grayscale(0%) brightness(100%) contrast(100%) opacity(100%);
     opacity: 1;
   }
 
