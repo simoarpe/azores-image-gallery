@@ -421,14 +421,14 @@ function isMobile() {
 if (isMobile()) {
   const mySwipeIt = new SwipeIt('body');
   mySwipeIt.on('swipeLeft',function(e){
-      //check if lightbox is present
-      if($('.lightbox').length >  0 ) {
-          $("#next").click();
+      // Check if lightbox is present.
+      if($('#lightbox').length >  0 ) {
+          $(".lb-next").click();
       }
   }).on('swipeRight',function(e){
-      //check if lightbox is present
-      if($('.lightbox').length >  0 ) {
-          $("#prev").click();
+      // Check if lightbox is present.
+      if($('#lightbox').length >  0 ) {
+          $(".lb-prev").click();
       }
   });
 }
