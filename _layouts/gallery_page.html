@@ -3,8 +3,7 @@ layout: page
 ---
 <script src="/js/jquery.min.js"></script>
 <script src="/js/swipe-it.min.js"></script>
-<script src="/js/lightbox-2.6-custom.js"></script>
-
+<script src="/js/lightbox.js"></script>
 <style>
     .image-gallery {overflow: auto; margin-left: -1%!important;}
     .image-gallery a {color: silver!important; float: left; display: block; margin: 0 0 1% 1%; width: 19%; text-align: center; text-decoration: none!important;}
@@ -18,8 +17,8 @@ layout: page
 </style>
 <p class="image-gallery">
 {% for image in page.images %}
-        <a href="{{ image.name }}" title="{{ image.name }}" data-lightbox="property">
-        <img src="thumbs/{{ image.name }}" alt="{{ image.name }}" title="{{ image.name }}" class="img-polaroid"/>
+        <a href="{{ image.name }}" title="{{ image.name }}">
+        <img src="thumbs/{{ image.name }}" alt="{{ image.name }}" title="{{ image.name }}" />
         <span>{{ filename }}</span>
         </a>
 {% endfor %}
