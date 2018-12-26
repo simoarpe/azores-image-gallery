@@ -94,3 +94,12 @@ transform-origin: 50% 50%;
     -ms-user-select: none;      
     user-select: none;
 }
+  
+  html.lb-disable-scrolling {
+	overflow: hidden;
+	/* Position fixed required for iOS but reset the scroll on the beginning. Just putting overflow: hidden; on the body is not enough. */
+	/* position: fixed; */
+	position: static;
+	height: 100vh;
+	width: 100vw;
+  }

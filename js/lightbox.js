@@ -53,6 +53,7 @@ $(document).ready(function() {
 			}
 			else {
 				$("a.gallery").removeClass('gallery');
+				$('html').removeClass('lb-disable-scrolling');
 			}
 		}
 		else $(this).remove();
@@ -76,6 +77,7 @@ $(document).ready(function() {
 	});
 
 	$("body").on("click", "a[class*='lightbox-']", function(){
+		$('html').addClass('lb-disable-scrolling');
 		var link_elements = $(this).parent().find("a[class*='lightbox-']");
 		$(link_elements).removeClass('current');
 		for (var i=0; i<link_elements.length; i++) {
