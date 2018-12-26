@@ -110,7 +110,7 @@ body:after {
   
   /* line 77, ../sass/lightbox.sass */
   .lb-prev, .lb-next {
-    width: 25%;
+    width: 49%;
     height: 100%;
     cursor: pointer;
     /* Trick IE into showing hover */
@@ -266,11 +266,14 @@ html.lb-disable-scrolling {
 <<<<<<< HEAD
   /* Position fixed required for iOS but reset the scroll on the beginning. Just putting overflow: hidden; on the body is not enough. */
   /* position: fixed; */
+<<<<<<< HEAD
   position: static;
 =======
   /* Position fixed required for iOS. Just putting overflow: hidden; on the body is not enough. */
   position: fixed;
 >>>>>>> parent of 76b0ef2... Fix scolling from resetting on the top
+=======
+>>>>>>> parent of da9918b... Better arrows spacing
   height: 100vh;
   width: 100vw;
 }
