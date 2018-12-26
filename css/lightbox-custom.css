@@ -110,7 +110,7 @@ body:after {
   
   /* line 77, ../sass/lightbox.sass */
   .lb-prev, .lb-next {
-    width: 49%;
+    width: 25%;
     height: 100%;
     cursor: pointer;
     /* Trick IE into showing hover */
@@ -265,6 +265,7 @@ html.lb-disable-scrolling {
   overflow: hidden;
   /* Position fixed required for iOS but reset the scroll on the beginning. Just putting overflow: hidden; on the body is not enough. */
   /* position: fixed; */
+  position: static;
   height: 100vh;
   width: 100vw;
 }
