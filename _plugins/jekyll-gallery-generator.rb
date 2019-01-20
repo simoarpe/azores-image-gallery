@@ -139,7 +139,7 @@ module Jekyll
       gallery_config = {}
       max_size_x = 300
       max_size_y = 300
-      symlink = config["symlink"] || true
+      symlink = config["symlink"].nil? ? true : config["symlink"]
       gravity = config["gravity"] || "center"
       auto_orient = config["auto_orient"] || false
       begin
@@ -190,9 +190,10 @@ module Jekyll
         date_times[name] = image.date_time
         @site.static_files << GalleryFile.new(site, base, File.join(@dest_dir, "thumbs"), name)
 
+        link_src = site.in_source_dir(image.path)
+        link_dest = site.in_dest_dir(image.path)
+
         if symlink
-          link_src = site.in_source_dir(image.path)
-          link_dest = site.in_dest_dir(image.path)
           @site.static_files.delete_if {|sf|
             sf.relative_path == "/" + image.path
           }
@@ -209,6 +210,18 @@ module Jekyll
           if not File.exists?(link_dest) and not File.symlink?(link_dest)
             puts "Symlinking #{link_src} -> #{link_dest}"
             File.symlink(link_src, link_dest)
+          end
+        elsif auto_orient
+          if File.mtime(link_src) > File.mtime(link_dest)
+            begin
+              m_image = Image.open(link_src)
+              m_image.auto_orient
+              puts "Writing auto oriented image to #{link_dest}"
+              m_image.write(link_dest)
+            rescue Exception => e
+              printf "Error generating auto oriented image for #{link_src}: #{e}\r"
+              puts e.backtrace
+            end
           end
         end
         thumb_path = File.join(thumbs_dir, name)
