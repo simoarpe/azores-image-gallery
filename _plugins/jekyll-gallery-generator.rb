@@ -5,6 +5,7 @@ include MiniMagick
 
 include FileUtils
 
+GALLERY_INDEX_HTML = "galleries.html"
 $image_extensions = [".png", ".jpg", ".jpeg", ".gif", ".bmp"]
 
 module Jekyll
@@ -94,9 +95,9 @@ module Jekyll
       config = site.config["gallery"] || {}
 
       self.process(@name)
-      gallery_index = File.join(base, "_layouts", "gallery_index.html")
+      gallery_index = File.join(base, "_layouts", GALLERY_INDEX_HTML)
       unless File.exists?(gallery_index)
-        gallery_index = File.join(File.dirname(__FILE__), "gallery_index.html")
+        gallery_index = File.join(File.dirname(__FILE__), GALLERY_INDEX_HTML)
       end
       self.read_yaml(File.dirname(gallery_index), File.basename(gallery_index))
       self.data["title"] = config["title"] || "Photos"

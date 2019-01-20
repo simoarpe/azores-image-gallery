@@ -2,6 +2,8 @@
 layout: default
 permalink: /
 ---
+{% comment %} If this file is renamed or the permalink modified don't forget to change GALLERY_INDEX_HTML in jekyll-gallery-generator.rb. {% endcomment %}
+
 {% for gallery in page.galleries %}
 
 {% if gallery['dir'] %} 
