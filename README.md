@@ -8,6 +8,8 @@ This project is a small Frankestein that was put together from other similar pro
 ## Demo
 If you want to see Azores Image Gallery in action check this [demo](http://sarpex.com/travels): it's a small set of galleries put together in 1 minute.
 
+## Use case
+
 The main goal is to show a given set of albums with ease leveraging the flexibility of Jekyll to provide a pleasant theme.
 ![Gallery Index](https://github.com/simoarpe/azores-image-gallery/blob/master/gallery_index.png)
 ![Gallery Page](https://github.com/simoarpe/azores-image-gallery/blob/master/gallery_page.gif)
