@@ -182,6 +182,9 @@ module Jekyll
       thumbs_dir = File.join(site.dest, @dest_dir, "thumbs")
       FileUtils.mkdir_p(thumbs_dir, :mode => 0755)
 
+      gallery_dir = File.join(site.dest, @dest_dir)
+      FileUtils.mkdir_p(gallery_dir, :mode => 0755)
+
       date_times = {}
       entries = Dir.entries(dir)
       entries.each_with_index do |name, i|
@@ -214,6 +217,11 @@ module Jekyll
             File.symlink(link_src, link_dest)
           end
         elsif auto_orient
+          @site.static_files.delete_if {|sf|
+            sf.relative_path == "/" + image.path
+          }
+          @site.static_files << GalleryFile.new(site, base, dir, name)
+
           if  !File.exists?(link_dest) || File.mtime(image.path).to_i > File.mtime(link_dest).to_i
             begin
               g_image = Image.open(image.path)
