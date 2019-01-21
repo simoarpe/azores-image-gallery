@@ -181,6 +181,7 @@ module Jekyll
 
       thumbs_dir = File.join(site.dest, @dest_dir, "thumbs")
       FileUtils.mkdir_p(thumbs_dir, :mode => 0755)
+
       date_times = {}
       entries = Dir.entries(dir)
       entries.each_with_index do |name, i|
@@ -213,12 +214,12 @@ module Jekyll
             File.symlink(link_src, link_dest)
           end
         elsif auto_orient
-          if File.mtime(link_src) > File.mtime(link_dest)
+          if !File.exists?(link_src) or File.mtime(image.path) > File.mtime(link_dest)
             begin
-              m_image = Image.open(link_src)
-              m_image.auto_orient
+              g_image = Image.open(image.path)
+              g_image.auto_orient
               puts "Writing auto oriented image to #{link_dest}"
-              m_image.write(link_dest)
+              g_image.write(link_dest)
             rescue Exception => e
               printf "Error generating auto oriented image for #{link_src}: #{e}\r"
               puts e.backtrace
