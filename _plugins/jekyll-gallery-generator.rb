@@ -214,7 +214,7 @@ module Jekyll
             File.symlink(link_src, link_dest)
           end
         elsif auto_orient
-          if !File.exists?(link_src) or File.mtime(image.path) > File.mtime(link_dest)
+          if  !File.exists?(link_dest) || File.mtime(image.path).to_i > File.mtime(link_dest).to_i
             begin
               g_image = Image.open(image.path)
               g_image.auto_orient
@@ -227,7 +227,7 @@ module Jekyll
           end
         end
         thumb_path = File.join(thumbs_dir, name)
-        if File.file?(thumb_path) == false or File.mtime(image.path) > File.mtime(thumb_path)
+        if File.file?(thumb_path) == false or File.mtime(image.path).to_i > File.mtime(thumb_path).to_i
           begin
             m_image = Image.open(image.path)
             m_image.combine_options do |image|
