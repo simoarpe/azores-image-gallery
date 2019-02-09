@@ -5,6 +5,8 @@ This project is a small Frankestein that was put together from other similar pro
 • [Jekyll MiniMagick new](https://github.com/MattKevan/Jekyll-MiniMagick-new)  
 • [urban-theme](https://github.com/midzer/urban-theme)  
 
+Check [this blog post](http://sarpex.co.uk/2019/02/quick-experiment-with-ruby-and-jekyll/) if you want to know more about the creation of Azores Image Gallery 😀
+
 ## Demo
 If you want to see Azores Image Gallery in action check this [demo](http://sarpex.com/travels): it's a small set of galleries put together in 1 minute.
 
