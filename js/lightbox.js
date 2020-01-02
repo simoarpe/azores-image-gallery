@@ -63,15 +63,12 @@ $(document).ready(function() {
 	//add the youtube lightbox on click
 	$("a.lightbox-youtube").click(function(event){
 		event.preventDefault();
-		$('<div class="lightbox"><a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="videoWrapperContainer"><div class="videoWrapper"><iframe src="https://www.youtube.com/embed/'+$(this).attr('data-id')+'?autoplay=1&showinfo=0&rel=0"></iframe></div></div></div>').appendTo('body');
+		$('<div class="lightbox"><a id="close"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="videoWrapperContainer"><div class="videoWrapper"><iframe src="https://www.youtube.com/embed/'+$(this).attr('data-id')+'?autoplay=1&showinfo=0&rel=0"></iframe></div></div></div>').appendTo('body');
 	});
 	//add the image lightbox on click
 	$("a.lightbox-image").click(function(event){
 		event.preventDefault();
-		$('<div class="lightbox"><a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><a id="rotate" href="#"><i class="fa fa-repeat" aria-hidden="true"></i> Rotate</a><img id="gallery-image" src="'+$(this).attr('href')+'" alt="'+$(this).attr('title')+'" title="'+$(this).attr('title')+'" /><span>'+$(this).attr('title')+'</span></div>').appendTo('body');
-
-
-		// $('.lightbox').append('<div class="rotate-button"><a href="#" class="pull-right rotate" style="font-size: 18px;padding: 3px 0;"><i class="fa fa-repeat" aria-hidden="true"></i> Rotate</a></div>')
+		$('<div class="lightbox"><a id="close"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><a id="rotate" href="#"><i class="fa fa-repeat" aria-hidden="true"></i> Rotate</a><img id="gallery-image" src="'+$(this).attr('href')+'" alt="'+$(this).attr('title')+'" title="'+$(this).attr('title')+'" /><span>'+$(this).attr('title')+'</span></div>').appendTo('body');
     
 		$('#rotate').bind('click', function(event) {
 		  event.stopPropagation();
@@ -89,7 +86,7 @@ $(document).ready(function() {
 	//add the vimeo lightbox on click
 	$("body").on("click", "a.lightbox-vimeo", function(event){
 		event.preventDefault();
-		$('<div class="lightbox"><a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="videoWrapperContainer"><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/'+$(this).attr('data-id')+'/?autoplay=1&byline=0&title=0&portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div></div>').appendTo('body');
+		$('<div class="lightbox"><a id="close"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="videoWrapperContainer"><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/'+$(this).attr('data-id')+'/?autoplay=1&byline=0&title=0&portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div></div>').appendTo('body');
 	});
 
 	$("body").on("click", "a[class*='lightbox-']", function(){

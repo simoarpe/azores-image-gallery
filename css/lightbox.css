@@ -59,42 +59,19 @@
 	border: 0;
 	display: block;
 }   
-.lightbox #prev, .lightbox #next, .lightbox #rotate {height: 50px; line-height: 36px; display: none; margin-top: -25px; position: fixed; top: 50%; padding: 0 15px; cursor: pointer; text-decoration: none; z-index: 99; color: white; }
+.lightbox #prev, .lightbox #next, .lightbox #rotate, .lightbox #close {height: 50px; line-height: 36px; display: none; margin-top: -25px; position: fixed; top: 50%; padding: 0 15px; cursor: pointer; text-decoration: none; z-index: 99; color: white; }
 
 .lightbox #prev, .lightbox #next {font-size: 60px;}
-.lightbox #rotate {font-size: 18px;}
+.lightbox #rotate, .lightbox #close {font-size: 18px;}
 
-.lightbox.gallery #prev, .lightbox.gallery #next, .lightbox #rotate {display: block;}
-.lightbox #prev {left: 0;}
-.lightbox #next {right: 0;}
-.lightbox #rotate {top: 22px;}
-.lightbox #close {height: 50px; width: 50px; position: fixed; cursor: pointer; text-decoration: none; z-index: 99; right: 0; top: 0;}
+.lightbox.gallery #prev, .lightbox.gallery #next, .lightbox #rotate, .lightbox #close {display: block;}
+.lightbox #prev, .lightbox #rotate {left: 0;}
+.lightbox #next, .lightbox #close {right: 0;}
+.lightbox #rotate, .lightbox #close {top: 22px;}
+/* .lightbox #close {height: 50px; width: 50px; position: fixed; cursor: pointer; text-decoration: none; z-index: 99; right: 0; top: 0;} */
 
-.lightbox #close:after, .lightbox #close:before {position: absolute; margin-top: 22px; margin-left: 14px; content: ""; height: 3px; background: white; width: 23px;
--webkit-transform-origin: 50% 50%;
--moz-transform-origin: 50% 50%;
--o-transform-origin: 50% 50%;
-transform-origin: 50% 50%;
-/* Safari */
--webkit-transform: rotate(-45deg);
-/* Firefox */
--moz-transform: rotate(-45deg);
-/* IE */
--ms-transform: rotate(-45deg);
-/* Opera */
--o-transform: rotate(-45deg);
-}
-
-.lightbox #close:after {
-/* Safari */
--webkit-transform: rotate(45deg);
-/* Firefox */
--moz-transform: rotate(45deg);
-/* IE */
--ms-transform: rotate(45deg);
-/* Opera */
--o-transform: rotate(45deg);
-}
+/* .lightbox #close:after, .lightbox #close:before {position: absolute; margin-top: 22px; margin-left: 14px; height: 3px; background: white; width: 23px;
+} */
 
 .lightbox, .lightbox * {
     -webkit-user-select: none;  
