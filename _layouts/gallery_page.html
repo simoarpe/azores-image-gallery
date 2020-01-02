@@ -2,10 +2,8 @@
 layout: gallery
 ---
 <script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="{{ '/js/swipe-it.min.js' | prepend: site.baseurl }}"></script>
-<script src="{{ '/js/lightbox-rotate.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/lightbox.js' | prepend: site.baseurl }}"></script>
 <style>
     .image-gallery {overflow: auto; margin-left: -1%!important;}
     .image-gallery a {color: silver!important; float: left; display: block; margin: 0 0 1% 1%; width: 19%; text-align: center; text-decoration: none!important;}
@@ -19,9 +17,9 @@ layout: gallery
 </style>
 <p class="image-gallery">
 {% for image in page.images %}
-<a href="{{ image.name }}" data-gallery="gallery" data-toggle="lightbox" title="{{ image.name }}">
-    <img src="thumbs/{{ image.name }}" alt="{{ image.name }}" title="{{ image.name }}" class="img-fluid">
-    <span>{{ filename }}</span>
-</a>
+        <a href="{{ image.name }}" title="{{ image.name }}">
+        <img src="thumbs/{{ image.name }}" alt="{{ image.name }}" title="{{ image.name }}" />
+        <span>{{ filename }}</span>
+        </a>
 {% endfor %}
 </p>
