@@ -114,8 +114,11 @@ $(document).keydown(function(e) {
         break;
         case 39: // right
         $("#next").click();
-        break;
-	case 27: // esc
+		break;
+		case 82: // r
+		$("#rotate").click();
+		break;
+		case 27: // esc
         $("#close").click();
         break;
         default: return; // exit this handler for other keys
