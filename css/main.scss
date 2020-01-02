@@ -13,3 +13,13 @@ $grey-color-dark:  darken($grey-color, 25%);
         "base",
         "layout"
 ;
+
+.rotate-button {
+        position: absolute;
+        right: 0;
+        z-index: 2;
+}
+    
+.modal-body .ekko-lightbox-item {
+overflow: hidden;
+}
