@@ -326,7 +326,9 @@ module Jekyll
       end
       Dir.chdir(original_dir)
 
-      gallery_index = GalleryIndex.new(site, site.source, dir, galleries)
+      root = config["root"] || false
+      gallery_dir = root ? "" : dir
+      gallery_index = GalleryIndex.new(site, site.source, gallery_dir, galleries)
       gallery_index.render(site.layouts, site.site_payload)
       gallery_index.write(site.dest)
       site.pages << gallery_index
