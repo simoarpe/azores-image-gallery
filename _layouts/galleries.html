@@ -3,20 +3,29 @@ layout: default
 ---
 {% comment %} If this file is renamed or the permalink modified don't forget to change GALLERY_INDEX_HTML in jekyll-gallery-generator.rb. {% endcomment %}
 
-{% if site.gallery['root'] %} 
-    {% assign is_root = true %}
+{% if site['gallery'] and site.gallery['thumbnail_size'] and site.gallery['thumbnail_size']['x'] %}
+    {% assign preview_max_width = site.gallery.thumbnail_size.x %}
+{% else %}
+    {% assign preview_max_width = 300 %}
+{% endif%}
+
+{% include styles.html %}
+{% if site['gallery'] and site.gallery['root'] %} 
+    {% assign is_root = site.gallery.root %}
     {% if site.gallery['dir'] %} 
         {% assign gallery_dir = site.gallery['dir'] %}
     {% else %}
         {% assign gallery_dir = 'photos' %}
     {% endif %}
+{% else %}
+    {% assign is_root = false %}
 {% endif %}
 
 {% for gallery in page.galleries %}
 
 {% cycle 'add row' : '<div class="row">', '', '' %}
   <div class="column column-33">
-      <div class="preview-panel">
+      <div class="preview-panel" style="max-width: {{ preview_max_width }}px;">
         {% if is_root %}
         <a href="{{ gallery_dir }}/{{ gallery['gallery'] }}">
             <img class="gallery-best-image" src="{{ gallery_dir }}/{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}">
