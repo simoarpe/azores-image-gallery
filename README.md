@@ -57,12 +57,6 @@ twitter_username: jekyllrb
 github_username:  jekyll
 ```
 
-There are also some placeholders in the following places:
-* `_includes/header.html`:  `<a class="site-title" href="{{ site.baseurl }}/"><img src="holder.js/500x150"></a>`
-* `_layouts/default.html`:  `<script src="{{ '/js/holder.js' | prepend: site.baseurl }}"></script>`
-
-These can be changed with something better to improve the generated site.
-
 To offer the site in your local network run `jekyll serve --host 0.0.0.0` and all the devices connected to the same network can navigate the albums by typing `<local_ip>:4000`. The `<local_ip>` is the local IP of the machine serving the Jekyll site. On OSx the IP can be easily discovered by accessing the Network Preferences.
 
 ## Other useful info
