@@ -19,6 +19,7 @@ The main goal is to show a given set of albums with ease leveraging the flexibil
 The following configuration options are applied by default if not specified:
 ```config.yml
 gallery:
+  root: false               # When true, it generates the main gallery index at root level.
   dir: photos               # Path to the gallery
   symlink: true             # false: copy images into _site. true: create symbolic links (saves disk space)
   title: "Photos"           # Title for gallery index page
