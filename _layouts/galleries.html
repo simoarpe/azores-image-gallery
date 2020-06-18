@@ -1,23 +1,32 @@
 ---
 layout: default
-permalink: /
 ---
 {% comment %} If this file is renamed or the permalink modified don't forget to change GALLERY_INDEX_HTML in jekyll-gallery-generator.rb. {% endcomment %}
 
-{% for gallery in page.galleries %}
-
-{% if gallery['dir'] %} 
-{% assign gallery_dir = gallery['dir'] %}
-{% else %}
-{% assign gallery_dir = 'photos' %}
+{% if site.gallery['root'] %} 
+    {% assign is_root = true %}
+    {% if site.gallery['dir'] %} 
+        {% assign gallery_dir = site.gallery['dir'] %}
+    {% else %}
+        {% assign gallery_dir = 'photos' %}
+    {% endif %}
 {% endif %}
+
+{% for gallery in page.galleries %}
 
 {% cycle 'add row' : '<div class="row">', '', '' %}
   <div class="column column-33">
       <div class="preview-panel">
-          <a href="{{ gallery_dir }}/{{ gallery['gallery'] }}">
-              <img class="gallery-best-image" src="{{ gallery_dir }}/{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}">
-          </a>
+        {% if is_root %}
+        <a href="{{ gallery_dir }}/{{ gallery['gallery'] }}">
+            <img class="gallery-best-image" src="{{ gallery_dir }}/{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}">
+        </a>
+        {% else %}
+        <a href="{{ gallery['gallery'] }}">
+            <img class="gallery-best-image" src="{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}">
+        </a>
+        {% endif %}
+          
           <div class="post-title">{{ gallery["name"] }}</div>
           {{ gallery["images"] | size }} image{% if gallery["images"].size != 1 %}s{% endif %}
       </div>

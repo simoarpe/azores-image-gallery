@@ -2,9 +2,9 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "azores_image_gallery"
-  spec.version       = "1.0"
-  spec.authors       = ["simonarpe"]
-  spec.email         = [""]
+  spec.version       = "1.1"
+  spec.authors       = ["Simone Arpe"]
+  spec.email         = ["simon.arpe@gmail.com"]
 
   spec.summary       = %q{A Jekyll site with the main goal to show a set of albums with ease and a pleasant theme out of the box.}
   spec.homepage      = "https://github.com/simoarpe/azores-image-gallery"
