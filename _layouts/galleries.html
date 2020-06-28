@@ -21,25 +21,22 @@ layout: default
     {% assign is_root = false %}
 {% endif %}
 
+<div class="gallery-row row">
 {% for gallery in page.galleries %}
-
-{% cycle 'add row' : '<div class="row">', '', '' %}
-  <div class="column column-33">
-      <div class="preview-panel" style="max-width: {{ preview_max_width }}px;">
-        {% if is_root %}
-        <a href="{{ gallery_dir }}/{{ gallery['gallery'] }}">
-            <img class="gallery-best-image" src="{{ gallery_dir }}/{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}">
-        </a>
-        {% else %}
-        <a href="{{ gallery['gallery'] }}">
-            <img class="gallery-best-image" src="{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}">
-        </a>
-        {% endif %}
-          
-          <div class="post-title">{{ gallery["name"] }}</div>
-          {{ gallery["images"] | size }} image{% if gallery["images"].size != 1 %}s{% endif %}
-      </div>
-  </div>
-  {% cycle 'end row' : '', '', '</div>' %}
+    <div class="column col-xs-12 col-sm-6 col-md-3">
+        <div class="preview-panel" style="max-width: {{ preview_max_width }}px;">
+            {% if is_root %}
+                <a href="{{ gallery_dir }}/{{ gallery['gallery'] }}">
+                    <img class="gallery-best-image" src="{{ gallery_dir }}/{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}">
+                </a>
+            {% else %}
+                <a href="{{ gallery['gallery'] }}">
+                    <img class="gallery-best-image" src="{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}">
+                </a>
+            {% endif %}
+        <div class="post-title">{{ gallery["name"] }}</div>
+        {{ gallery["images"] | size }} image{% if gallery["images"].size != 1 %}s{% endif %}
+        </div>
+    </div>
   {% endfor %}
-  {% cycle 'end row' : '', '</div>', '</div>' %}
+</div>
