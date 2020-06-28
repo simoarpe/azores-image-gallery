@@ -51,17 +51,3 @@
     list-style: none;
     margin-left: 0;
 }
-
-/**
- * Misc
- */
-.preview-panel {
-    margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
-    border: 1px solid $color-initial;
-    
-    &:hover {
-        border: 1px solid $grey-color-light;
-    }
-}

@@ -14,3 +14,18 @@ $grey-color-dark:  darken($grey-color, 25%);
         "layout"
 ;
 
+/**
+ * This is what is needed if you decide to remove Milligram and go for
+ * a different layout.
+ */
+ .preview-panel {
+        margin: 0 auto;
+        padding: 1rem;
+        box-sizing: border-box;
+        border: 1px solid $color-initial;
+        
+        &:hover {
+            border: 1px solid $grey-color-light;
+        }
+    }
+
