@@ -309,8 +309,15 @@ module Jekyll
       galleries = []
       original_dir = Dir.getwd
       Dir.chdir(site.source)
-      begin
-        Dir.foreach(dir) do |gallery_dir|
+      galleries_dir = []
+      Dir.foreach(dir) do |gallery_dir|
+        galleries_dir << gallery_dir
+      end
+      # Sort galleries alphabetically.
+      galleries_dir.sort!
+
+      begin  
+        galleries_dir.each {|gallery_dir|
           gallery_path = File.join(dir, gallery_dir)
           if File.directory?(gallery_path) and gallery_dir.chars.first != "."
             gallery = GalleryPage.new(site, site.source, gallery_path, gallery_dir)
@@ -319,11 +326,12 @@ module Jekyll
             site.pages << gallery
             galleries << gallery
           end
-        end
+        }
       rescue Exception => e
         puts "Error generating galleries: #{e}"
         puts e.backtrace
       end
+
       Dir.chdir(original_dir)
 
       root = config["root"] || false
