@@ -60,7 +60,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 ```
 
-To make your website in your local network run `jekyll serve --host 0.0.0.0` and all the devices connected to the same network can navigate the albums by typing `<local_ip>:4000`. The `<local_ip>` is the local IP of the machine serving the Jekyll site. On OSx the IP can be easily discovered by accessing the Network Preferences.
+To make your website available in your local network run `jekyll serve --host 0.0.0.0` and all the devices connected to the same network can navigate the albums by typing `<local_ip>:4000`. The `<local_ip>` is the local IP of the machine serving the Jekyll site. On OSx the IP can be easily discovered by accessing the Network Preferences.
 
 ### Installation
 Azores Image Gallery is based on [Jekyll](https://jekyllrb.com/) and [ImageMagick](https://imagemagick.org/).
