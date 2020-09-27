@@ -70,6 +70,7 @@ To install Jekyll please refer to the steps documented in the [Installation sect
 
 #### ImageMagick
 [ImageMagick](https://imagemagick.org/) is a powerful tool for manipulating images.
+Depending on your system refer to the following steps:
 
 #### Linux
 ##### Ubuntu
