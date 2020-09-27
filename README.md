@@ -36,6 +36,8 @@ Check `_config.yml` for the full list of options.
 
 ## Installation and Configuration
 
+### Configuration
+
 * Clone the project and simply place all your albums in the gallery folder that by default is `photos`.
 * The first time only run `bundle install` to download all the dependencies.
 * Start Jekyll by typing `jekyll serve`.
@@ -58,13 +60,68 @@ twitter_username: jekyllrb
 github_username:  jekyll
 ```
 
-To offer the site in your local network run `jekyll serve --host 0.0.0.0` and all the devices connected to the same network can navigate the albums by typing `<local_ip>:4000`. The `<local_ip>` is the local IP of the machine serving the Jekyll site. On OSx the IP can be easily discovered by accessing the Network Preferences.
+To make your website in your local network run `jekyll serve --host 0.0.0.0` and all the devices connected to the same network can navigate the albums by typing `<local_ip>:4000`. The `<local_ip>` is the local IP of the machine serving the Jekyll site. On OSx the IP can be easily discovered by accessing the Network Preferences.
+
+### Installation
+Azores Image Gallery is based on [Jekyll](https://jekyllrb.com/) and [ImageMagick](https://imagemagick.org/).
+
+#### Jekyll
+To install Jekyll please refer to the steps documented in the [Installation section](https://jekyllrb.com/docs/installation/) of the official Jekyll website.
+
+#### ImageMagick
+[ImageMagick](https://imagemagick.org/) is a powerful tool for manipulating images.
+
+#### Linux
+##### Ubuntu
+On Ubuntu, you can run:
+
+```sh
+sudo apt-get install libmagickwand-dev
+```
+
+##### Centos
+On Centos, you can run:
+
+```sh
+sudo yum install gcc ImageMagick-devel make which
+```
+
+##### Arch Linux
+On Arch Linux, you can run:
+
+```sh
+pacman -Syy pkg-config imagemagick
+```
+
+##### Alpine Linux
+On Alpine Linux, you can run:
+
+```
+apk add pkgconfig imagemagick imagemagick-dev imagemagick-libs
+```
+
+or you can run if you would like to use ImageMagick 6:
+
+```
+apk add pkgconfig imagemagick6 imagemagick6-dev imagemagick6-libs
+```
+
+#### macOS
+On macOS, you can run:
+
+```sh
+brew install pkg-config imagemagick
+```
+
+#### Windows
+1. Download the latest binary from [Windows Binary Release](https://imagemagick.org/script/download.php#windows) (as of today is `ImageMagick-7.0.10-30-Q16-HDRI-x64-dll.exe`).
+2. When installing ImageMagick you need to turn on checkboxes `Add application directory to your system path` and `Install development headers and librarries for C and C++`.
 
 ## Other useful info
 
 * Azores Image Gallery uses under the hood [`Minimagick`](https://github.com/minimagick/minimagick) to generate all the thumbnails. `Minimagick` is a clone of [`Rmagic`](https://github.com/rmagick/rmagick) but with a smaller memory footprint.
 
-* The `symlink` option, that is enabled by default, will create symbolic links instead of copying every pictures in order to save disk space.
+* The `symlink` option, that is enabled by default, will create symbolic links instead of copying every pictures in order to save disk space. If you are using this option on a Windows machine make sure to run `jekyll serve` from a terminal with administrator permissions or it will fail. 
 
 * `auto_orient` options is disabled by default. If set to true Azores Image Gallery will use an [Exif Reader](https://github.com/remvee/exifr) to determine the actual orientation of a picture.
 
