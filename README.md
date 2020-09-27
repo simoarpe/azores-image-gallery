@@ -101,12 +101,6 @@ On Alpine Linux, you can run:
 apk add pkgconfig imagemagick imagemagick-dev imagemagick-libs
 ```
 
-or you can run if you would like to use ImageMagick 6:
-
-```
-apk add pkgconfig imagemagick6 imagemagick6-dev imagemagick6-libs
-```
-
 #### macOS
 On macOS, you can run:
 
